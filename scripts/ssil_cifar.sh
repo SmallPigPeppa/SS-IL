@@ -1,4 +1,4 @@
-/share/wenzhuoliu/conda-envs/lightning/bin/python main.py \
+/root/anaconda3/envs/lightning/bin/python main.py \
       --date ICCV \
       --trainer ssil \
       --dataset Imagenet \
