@@ -10,4 +10,5 @@
       --gammas 0.1 0.1  \
       --factor 1 \
       --memory-budget 500 \
+      --memory-growing \
       --pretrained_model /share/wenzhuoliu/code/solo-learn/trained_models/byol/t3pmk238/byol-imagenet32-t3pmk238-ep=999.ckpt
