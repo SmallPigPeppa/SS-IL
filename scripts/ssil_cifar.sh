@@ -9,4 +9,4 @@
       --schedule 40 80  \
       --gammas 0.1 0.1  \
       --factor 1 \
-      --memory-budget 20000
+      --memory-budget 1000
