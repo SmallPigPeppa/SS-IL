@@ -1,7 +1,7 @@
 /root/anaconda3/envs/lightning/bin/python main.py \
       --date ICCV \
       --trainer ssil \
-      --dataset Imagenet \
+      --dataset CIFAR100 \
       --replay-batch-size 32 \
       --base-classes 50 \
       --step-size 10 \
