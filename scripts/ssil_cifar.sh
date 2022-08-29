@@ -3,8 +3,8 @@
       --trainer ssil \
       --dataset Imagenet \
       --replay-batch-size 32 \
-      --base-classes 100 \
-      --step-size 100 \
+      --base-classes 50 \
+      --step-size 10 \
       --nepochs 100 \
       --schedule 40 80  \
       --gammas 0.1 0.1  \
