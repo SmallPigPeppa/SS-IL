@@ -14,8 +14,14 @@ class ModelFactory():
             #
             # import networks.resnet32 as res
             # return res.resnet32(100, trainer)
-            import networks.resnet_cifar as res
-            return res.resnet50(100, trainer)
+            import networks.resnet18 as res
+            import torch.nn as nn
+            resnet=res.resnet50(100, trainer)
+            resnet.conv1 = nn.Conv2d(3, 64, kernel_size=3, stride=1, padding=2, bias=False)
+            resnet.maxpool = nn.Identity()
+            return resnet
+            # import networks.resnet_cifar as res
+            # return res.resnet50(100, trainer)
         
         if dataset == 'CIFAR10':
             
