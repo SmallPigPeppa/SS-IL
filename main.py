@@ -10,7 +10,7 @@ import trainer
 import arguments
 from sklearn.utils import shuffle
 import os
-os.environ['CUDA_VISIBLE_DEVICES']='7'
+os.environ['CUDA_VISIBLE_DEVICES']='6,7'
 
 args = arguments.get_args()
 
