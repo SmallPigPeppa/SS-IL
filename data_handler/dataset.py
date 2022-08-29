@@ -193,8 +193,8 @@ class CIFAR100(Dataset):
             transforms.Normalize(mean, std),
         ])
 
-        train_data = datasets.CIFAR100(root="~/torch_ds", train= True,transform=self.train_transform,download=True)
-        test_data = datasets.CIFAR100(root="~/torch_ds", train= False,transform=self.test_transform,download=True)
+        train_data = datasets.CIFAR100(root="/share/wenzhuoliu/torch_ds", train= True,transform=self.train_transform,download=True)
+        test_data = datasets.CIFAR100(root="/share/wenzhuoliu/torch_ds", train= False,transform=self.test_transform,download=True)
         # self.loader = train_data.loader
 
         self.train_data = train_data.data
