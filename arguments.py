@@ -37,7 +37,7 @@ def get_args():
     parser.add_argument('--dataset', default='', type=str, required=True,
                         choices=['Imagenet',
                                  'Google_Landmark_v2_1K',
-                                 'Google_Landmark_v2_10K'], 
+                                 'Google_Landmark_v2_10K','CIFAR100'],
                         help='(default=%(default)s)')
     
     parser.add_argument('--trainer', default='', type=str, required=True,

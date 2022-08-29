@@ -394,7 +394,7 @@ class ResultLogger():
         self.model.eval()
         classes = self.incremental_loader.classes
         end = self.incremental_loader.end
-        end = self.incremental_loader.start
+        start = self.incremental_loader.start
         step_size = self.args.step_size
         with torch.no_grad():
             class_means = torch.zeros(classes).cuda()

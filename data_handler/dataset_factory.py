@@ -13,3 +13,5 @@ class DatasetFactory:
             return data.Google_Landmark_v2_1K()
         elif name == "Google_Landmark_v2_10K":
             return data.Google_Landmark_v2_10K()
+        elif name == "CIFAR100":
+            return data.CIFAR100()

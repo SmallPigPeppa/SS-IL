@@ -94,8 +94,8 @@ class Imagenet(Dataset):
             transforms.Normalize(mean, std),
             ])
         
-        train_data = datasets.ImageFolder("../dat/Imagenet/train", transform=self.train_transform)
-        test_data = datasets.ImageFolder("../dat/Imagenet/val", transform=self.test_transform)
+        train_data = datasets.ImageFolder("/data/datasets/imagenet/train", transform=self.train_transform)
+        test_data = datasets.ImageFolder("/data/datasets/imagenet/val", transform=self.test_transform)
         self.loader = train_data.loader
         
         self.train_data = []
@@ -171,3 +171,37 @@ class Google_Landmark_v2_10K(Dataset):
         self.test_labels = test_labels
         self.loader = loader
         
+class CIFAR100(Dataset):
+    def __init__(self):
+        # super().__init__(10000, "Google_Landmark_v2_10K")
+        super().__init__(100, "cifar100")
+
+        mean = [0.5071, 0.4867, 0.4408]
+        std = [0.2675, 0.2565, 0.2761]
+
+        self.train_transform = transforms.Compose([
+            transforms.RandomResizedCrop(32),
+            transforms.RandomHorizontalFlip(),
+            transforms.ToTensor(),
+            transforms.Normalize(mean, std),
+        ])
+
+        self.test_transform = transforms.Compose([
+            transforms.Resize(32),
+            transforms.CenterCrop(32),
+            transforms.ToTensor(),
+            transforms.Normalize(mean, std),
+        ])
+
+        train_data = datasets.CIFAR100(root="~/torch_ds", train= True,transform=self.train_transform,download=True)
+        test_data = datasets.CIFAR100(root="~/torch_ds", train= False,transform=self.test_transform,download=True)
+        # self.loader = train_data.loader
+
+        self.train_data = train_data.data
+        self.train_labels = train_data.targets
+        self.test_data = test_data.data
+        self.test_labels = test_data.targets
+        print(len(self.train_data))
+
+if __name__=='__main__':
+    x=CIFAR100()

@@ -7,13 +7,15 @@ class ModelFactory():
     def get_model(dataset, trainer):
         
         if dataset == 'CIFAR100':
-            
-            if trainer == 'wild' or trainer == 'wild_exp':
-                import networks.wrn as res
-                return res.wrn(100)
-            
-            import networks.resnet32 as res
-            return res.resnet32(100, trainer)
+            #
+            # if trainer == 'wild' or trainer == 'wild_exp':
+            #     import networks.wrn as res
+            #     return res.wrn(100)
+            #
+            # import networks.resnet32 as res
+            # return res.resnet32(100, trainer)
+            import networks.resnet_cifar as res
+            return res.resnet50(100, trainer)
         
         if dataset == 'CIFAR10':
             
