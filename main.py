@@ -31,6 +31,25 @@ print("Label shuffled")
 
 # Use Multi-GPU model
 myModel = networks.ModelFactory.get_model(args.dataset, args.trainer)
+
+
+# load pretrained model
+if args.pretrained_model is not None:
+    import warnings
+    print(f"load pretrained model from {args.pretrained_model}")
+    ckpt_path=args.pretrained_model
+    state = torch.load(ckpt_path)["state_dict"]
+    for k in list(state.keys()):
+        if "encoder" in k:
+            state[k.replace("encoder", "backbone")] = state[k]
+            warnings.warn(
+                "You are using an older checkpoint. Use a new one as some issues might arrise."
+            )
+        if "backbone" in k:
+            state[k.replace("backbone.", "")] = state[k]
+        del state[k]
+    myModel.load_state_dict(state, strict=False)
+
 myModel = torch.nn.DataParallel(myModel).cuda()
 
 incremental_loader = data_handler.IncrementalLoader(dataset, args)

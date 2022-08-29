@@ -57,6 +57,7 @@ def get_args():
                         choices=['local', 
                                  'global',], 
                         help='(default=%(default)s)')
+    parser.add_argument('--pretrained_model', type=str, required=False)
     
     args=parser.parse_args()
 
