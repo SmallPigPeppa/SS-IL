@@ -1,4 +1,4 @@
-/root/anaconda3/envs/lightning/bin/python main.py \
+/root/anaconda3/envs/torch/bin/python3 main.py \
       --date ICCV \
       --trainer ssil \
       --dataset CIFAR100 \
