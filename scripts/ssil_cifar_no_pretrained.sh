@@ -1,6 +1,6 @@
 export CUDA_VISIBLE_DEVICES=2,3
 /root/anaconda3/envs/torch/bin/python3 main.py \
-      --date ICCV \
+      --date no_pretrained \
       --trainer ssil \
       --dataset CIFAR100 \
       --replay-batch-size 32 \
