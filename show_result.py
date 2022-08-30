@@ -10,7 +10,7 @@ for i, filename in enumerate(os.listdir(result_dir)):
         print(f"{i}:{basename}")
 
 while True:
-    pkl_idx = int(input("Input pkl idx:\n input -1 to break up"))
+    pkl_idx = int(input("Input pkl idx (input -1 to break up) :"))
     if pkl_idx ==-1:
         break
     pkl_path = os.path.join(result_dir, all_pkl[pkl_idx])
