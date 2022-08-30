@@ -3,14 +3,15 @@ export CUDA_VISIBLE_DEVICES=6,7
       --date ICCV \
       --trainer podnet \
       --dataset CIFAR100 \
-      --lr 0.05 \
-      --batch-size 64 \
+      --lr 0.1 \
+      --batch-size 128 \
       --base-classes 50 \
       --step-size 10 \
       --debug 0 \
-      --nepochs 90 \
+      --nepochs 160 \
       --memory-budget 500 \
       --memory-growing \
+      --decay 5e-4 \
 
 
 
