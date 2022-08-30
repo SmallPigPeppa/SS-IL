@@ -10,7 +10,7 @@ for i, filename in enumerate(os.listdir(result_dir)):
         print(f"{i}:{basename}")
 pkl_idx = input("Input pkl idx:")
 
-pkl_path = os.path.join(result_dir, all_pkl[pkl_idx])
+pkl_path = os.path.join(result_dir, all_pkl[int(pkl_idx)])
 file = open(pkl_path, "rb")
 data = pickle.load(file)
 print(data)
