@@ -10,8 +10,6 @@ import trainer
 import arguments
 from sklearn.utils import shuffle
 import os
-os.environ['CUDA_VISIBLE_DEVICES']='4,5'
-
 args = arguments.get_args()
 
 dataset = data_handler.DatasetFactory.get_dataset(args.dataset)
